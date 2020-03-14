@@ -1,5 +1,5 @@
 # 337-project-3
-CS 337: Natural Language Processing, Project 3: Recipes- pulls information from online recipes, now with a conversational interface
+CS 337: Natural Language Processing, Project 3: Conversational Interface- pulls information from online recipes, now with a conversational interface
 
 This project is built on Python 3.8
 Project can be found on Github at <https://github.com/connort21/337-project-3>
