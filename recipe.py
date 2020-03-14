@@ -6,7 +6,7 @@ import re
 
 
 name = 'Recibot'
-print('Hello! My name is ') + name
+print('Hello! My name is ' + name)
 
 
 def print_ingredients(input_recipe):
