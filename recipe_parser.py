@@ -13,7 +13,8 @@ def parsed_recipe(url):
     methods = method_parse.scrape_methods(scraped['directions'])
     steps = step_parse.scrape_steps(scraped['directions'], tools, ingredients, methods)
 
-    recipe = {'ingredients': ingredients,
+    recipe = {'title': scraped['title'],
+              'ingredients': ingredients,
               'tools': tools,
               'methods': methods,
               'steps': steps}

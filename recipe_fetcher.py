@@ -13,4 +13,5 @@ class RecipeFetcher:
         results['directions'] = [direction.text.strip('\n ') for direction in
                                  page_graph.find_all('li', {'class': 'step'})
                                  or page_graph.find_all('li', {'class': 'subcontainer instructions-section-item'})]
+        results['title'] = page_graph.find('h1', {'id': 'recipe-main-content'}).text
         return results
