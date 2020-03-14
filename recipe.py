@@ -172,7 +172,7 @@ def print_step(input_recipe, step_num):
 
 recipe = False
 while True:
-    current_step = 1
+    current_step = 0
     print('What would you like to do?')
     response = ''
     if not recipe:
@@ -184,6 +184,9 @@ while True:
     elif response == '1':
         url = input('Enter recipe URL: ')
         recipe = parsed_recipe(url)
+    else:
+        print('Sorry, I didn\'t understand that.')
+        continue
 
     transform = input('Would you like to transform this recipe? "yes" or "no"\n')
     if 'yes' in transform.lower():
@@ -202,15 +205,15 @@ while True:
                 print('Sorry, I don\'t know how to answer that')
             else:
                 print('No problem, I found this reference for you: ' + link)
-            print('Should I continue to step ' + str(current_step) + '?')
+            print('Should I continue to step ' + str(current_step + 1) + '?')
 
         elif response_type == 'ingredients':
             print_ingredients(recipe)
-            print('Should I continue to step ' + str(current_step) + '?')
+            print('Should I continue to step ' + str(current_step + 1) + '?')
 
         elif response_type == 'tools':
             print_tools(recipe)
-            print('Should I continue to step ' + str(current_step) + '?')
+            print('Should I continue to step ' + str(current_step + 1) + '?')
 
         elif response_type in ['back', 'next'] or response_type.isnumeric():
             next_step = get_next_step(current_step, response_type)
@@ -232,3 +235,4 @@ while True:
 
         else:
             print('You can respond with a command, (listed in README.md) or with yes/no if asked if you would like to continue.')
+            print('Should I continue to step ' + str(current_step + 1) + '?')
